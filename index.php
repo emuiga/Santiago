@@ -30,7 +30,7 @@ if($result->Status==1)
 $_SESSION['login']=$_POST['emailid'];
 echo "<script type='text/javascript'> document.location ='dashboard.php'; </script>";
 } else {
-echo "<script>alert('Your Account Has been blocked .Please contact admin');</script>";
+echo "<script>alert('Your Account Has Been Blocked. Please Contact admin.');</script>";
 
 }
 }

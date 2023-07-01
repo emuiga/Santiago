@@ -89,7 +89,7 @@ $listdbooks=$query->rowCount();
 //     mysqli_query($conn, $updateQuery);
 //     exit;
 // } 
-$status!=1;
+$status=0;
 $sql1 ="SELECT id from tblissuedbookdetails where ReturnStatus=:status";
 $query1 = $dbh -> prepare($sql1);
 $query1->bindParam(':status',$status,PDO::PARAM_STR);

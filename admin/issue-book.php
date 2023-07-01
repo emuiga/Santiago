@@ -10,15 +10,12 @@ else{
 
 if(isset($_POST['issue']))
 {
-// $status=0;
 $patronid=strtoupper($_POST['patronid']);
 $bookid=$_POST['bookdetails'];
-$sql="INSERT INTO  tblissuedbookdetails(PatronID,BookId) VALUES(:patronid,:bookid)";
-// $sql1 ="SELECT id from tblissuedbookdetails where ReturnStatus=:status";
+$sql="INSERT INTO  tblissuedbookdetails(PatronID,BookId,ReturnStatus) VALUES(:patronid,:bookid,0)";
 $query = $dbh->prepare($sql);
 $query->bindParam(':patronid',$patronid,PDO::PARAM_STR);
 $query->bindParam(':bookid',$bookid,PDO::PARAM_STR);
-$query->bindParam(':bookname',$bookname,PDO::PARAM_STR);
 $query->execute();
 $lastInsertId = $dbh->lastInsertId();
 if($lastInsertId)
@@ -81,19 +78,19 @@ error:function (){}
 });
 }
 
-function getbook() {
-$("#loaderIcon").show();
-jQuery.ajax({
-url: "get_book.php",
-data:'bookname='+$("#bookname").val(),
-type: "POST",
-success:function(data){
-$("#get_book_name").html(data);
-$("#loaderIcon").hide();
-},
-error:function (){}
-});
-}
+// function getbook() {
+// $("#loaderIcon").show();
+// jQuery.ajax({
+// url: "get_book.php",
+// data:'bookname='+$("#bookname").val(),
+// type: "POST",
+// success:function(data){
+// $("#get_book_name").html(data);
+// $("#loaderIcon").hide();
+// },
+// error:function (){}
+// });
+// }
 
 </script> 
 <style type="text/css">
@@ -109,7 +106,7 @@ error:function (){}
       <!------MENU SECTION START-->
 <?php include('includes/header.php');?>
 <!-- MENU SECTION END-->
-    <div class="content-wra
+    <div class="content-wrapper">
     <div class="content-wrapper">
          <div class="container">
         <div class="row pad-botm">
