@@ -41,7 +41,7 @@ while($row= mysqli_fetch_array($result))
       <h4 align="center">N.C.A LIBRARY PATRONS</h4><br /> 
       <table border="1" cellspacing="0" cellpadding="3">  
            <tr>  
-                <th width="10%">Id</th>  
+                <th width="10%">Patron Id</th>  
                 <th width="30%">Name</th>  
                 <th width="30%">Email</th> 
                 <th width="25%">Contact</th>   
@@ -74,7 +74,7 @@ while($row= mysqli_fetch_array($result))
                      <br/>
                      <table class="table table-bordered">  
                           <tr>  
-                               <th width="10%">Id</th>  
+                               <th width="10%">Patron Id</th>  
                                <th width="30%">Name</th>  
                                <th width="30%">Email</th> 
                                <th width="25%">Contact</th>  
