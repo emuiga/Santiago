@@ -71,17 +71,14 @@ header('location:reg-patrons.php');
 <?php
 $con = mysqli_connect("localhost","root","","library");
 $sql = "SELECT distinct FullName from tblpatrons order by FullName";
-// $query = $dbh->prepare($sql);
-// $query->execute();
-// $results=$query->fetchAll(PDO::FETCH_OBJ);
 $result = mysqli_query($con, $sql);
 ?>
     <div>
-        <form action="pdfreport.php" method="post" target="blank">
-            <select name="patronid" id="">
+        <form action="pdfpatrons.php" method="post" target="blank">
+            <!-- <select name="patronid" id=""> -->
                 <?php
                 while($rows = mysqli_fetch_array($result)){
-                    echo '<option value="'.$rows['tblpatrons'].'">'.$rows["FullName"].'</option>';
+                    // echo '<option value="'.$rows['tblpatrons'].'">'.$rows["FullName"].'</option>';
                 }
                 ?>
             </select>

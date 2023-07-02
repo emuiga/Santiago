@@ -98,6 +98,24 @@ header('location:manage-books.php');
 </div>
 
 
+<?php
+$con = mysqli_connect("localhost","root","","library");
+$sql = "SELECT distinct FullName from tblbooks order by FullName";
+$result = mysqli_query($con, $sql);
+?>
+    <div>
+        <form action="pdfbooks.php" method="post" target="blank">
+            <!-- <select name="patronid" id=""> -->
+                <?php
+                while($rows = mysqli_fetch_array($result)){
+                    // echo '<option value="'.$rows['tblpatrons'].'">'.$rows["FullName"].'</option>';
+                }
+                ?>
+            </select>
+            <button type="submit" name="button">Generate Report</button>
+        </form>
+    </div>
+
         </div>
             <div class="row">
                 <div class="col-md-12">
