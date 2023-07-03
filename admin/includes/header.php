@@ -54,6 +54,7 @@
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="issue-book.php">Issue New Book</a></li>
                                      <li role="presentation"><a role="menuitem" tabindex="-1" href="manage-issued-books.php">Manage Issued Books</a></li>
+                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="./sendemail/eindex.php">Send Email</a></li>
                                 </ul>
                             </li>
                              <li><a href="reg-patrons.php">Reg Patrons</a></li>
@@ -66,3 +67,4 @@
             </div>
         </div>
     </section>
+

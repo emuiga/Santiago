@@ -108,7 +108,7 @@ $result = mysqli_query($con, $sql);
                 <div class="col-md-12">
                     <!-- Advanced Tables -->
                     <div class="panel panel-default">
-                        <div class="panel-heading">
+                        <div class="panel-heading" >
                           Issued Books 
                         </div>
                         <div class="panel-body">

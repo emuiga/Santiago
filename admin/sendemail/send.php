@@ -12,13 +12,13 @@ if (isset($_POST["send"])) {
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
-    $mail->Username = 'muigastephen14@gmail.com';//gmail
-    $mail->Password = 'tekxukncngieihyr';//gmail app password
+    $mail->Username = 'nyandaruaassemblylibrary@gmail.com';//gmail
+    $mail->Password = 'thyigngyzdparstu';//gmail app password
     $mail->SMTPSecure = 'ssl';
     $mail->Port = 465;
 
     
-    $mail->setFrom('muigastephen14@gmail.com');
+    $mail->setFrom('nyandaruaassemblylibrary@gmail.com');
     $mail->addAddress($_POST["email"]);
     $mail->isHTML(true);
     $mail->Subject = $_POST["subject"];
@@ -36,5 +36,3 @@ if (isset($_POST["send"])) {
     ";
 }
 ?>
-
-
