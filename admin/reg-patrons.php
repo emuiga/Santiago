@@ -102,7 +102,7 @@ $result = mysqli_query($con, $sql);
                                             <th>#</th>
                                             <th>Patron ID</th>
                                             <th>Patron Name</th>
-                                            <th>Email id </th>
+                                            <th>Email Id </th>
                                             <th>Mobile Number</th>
                                             <th>Reg Date</th>
                                             <th>Status</th>

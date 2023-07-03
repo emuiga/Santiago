@@ -96,6 +96,11 @@ $result = mysqli_query($con, $sql);
         </form>
     </div>
 
+    <div>
+        <form action="./sendemail/eindex.php" method="post" target="blank">
+            <button type="submit" name="button">Send Email</button>
+        </form>
+    </div>
 
 
         </div>
