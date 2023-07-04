@@ -11,6 +11,7 @@ else{
 if(isset($_POST['issue']))
 {
 
+    //check here
 $date = "$IssuesDate";
 $IssuesDate=$_POST['IssuesDate'];
 $ExpectedReturn = strtotime ( '30 day' , strtotime ( $date ) ) ;
