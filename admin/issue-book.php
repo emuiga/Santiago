@@ -10,9 +10,14 @@ else{
 
 if(isset($_POST['issue']))
 {
+
+$date = "$IssuesDate";
+$IssuesDate=$_POST['IssuesDate'];
+$ExpectedReturn = strtotime ( '30 day' , strtotime ( $date ) ) ;
+$ExpectedReturn = date ( 'Y-m-j' , $ExpectedReturn );
 $patronid=strtoupper($_POST['patronid']);
 $bookid=$_POST['bookdetails'];
-$sql="INSERT INTO  tblissuedbookdetails(PatronID,BookId,ReturnStatus) VALUES(:patronid,:bookid,0)";
+$sql="INSERT INTO  tblissuedbookdetails(PatronID,BookId,ReturnStatus,ExpectedReturn) VALUES(:patronid,:bookid,0,ExpectedReturn)";
 $query = $dbh->prepare($sql);
 $query->bindParam(':patronid',$patronid,PDO::PARAM_STR);
 $query->bindParam(':bookid',$bookid,PDO::PARAM_STR);

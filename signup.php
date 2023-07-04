@@ -4,7 +4,7 @@ include('includes/config.php');
 error_reporting(0);
 if(isset($_POST['signup']))
 {
-//code for captach verification
+//code for captcha verification
 if ($_POST["vercode"] != $_SESSION["vercode"] OR $_SESSION["vercode"]=='')  {
         echo "<script>alert('Incorrect verification code');</script>" ;
     } 
@@ -20,14 +20,16 @@ $PatronId= $hits[0];
 $fname=$_POST['fullname'];
 $mobileno=$_POST['mobileno'];
 $email=$_POST['email']; 
+$position=$_POST['position']; 
 $password=md5($_POST['password']); 
 $status=1;
-$sql="INSERT INTO  tblpatrons(PatronId,FullName,MobileNumber,EmailId,Password,Status) VALUES(:PatronId,:fname,:mobileno,:email,:password,:status)";
+$sql="INSERT INTO  tblpatrons(PatronId,FullName,MobileNumber,EmailId,Position,Password,Status) VALUES(:PatronId,:fname,:mobileno,:email,:position,:password,:status)";
 $query = $dbh->prepare($sql);
 $query->bindParam(':PatronId',$PatronId,PDO::PARAM_STR);
 $query->bindParam(':fname',$fname,PDO::PARAM_STR);
 $query->bindParam(':mobileno',$mobileno,PDO::PARAM_STR);
 $query->bindParam(':email',$email,PDO::PARAM_STR);
+$query->bindParam(':position',$position,PDO::PARAM_STR);
 $query->bindParam(':password',$password,PDO::PARAM_STR);
 $query->bindParam(':status',$status,PDO::PARAM_STR);
 $query->execute();
@@ -63,6 +65,11 @@ echo "<script>alert('Something went wrong. Please try again');</script>";
     <link href="assets/css/style.css" rel="stylesheet" />
     <!-- GOOGLE FONT -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+<style>
+    .error{
+        color:red;
+    }
+</style>
 <script type="text/javascript">
 function valid()
 {
@@ -89,15 +96,8 @@ $("#loaderIcon").hide();
 error:function (){}
 });
 }
-// function validate_number(){
-// if(document.signup.mobileno.value('/^[0-9]{10}+$/', $mobileno)) {
-//     // the format /^[0-9]{10}+$/ will check for phone number with 10 digits and only numbers
-//     alert("Phone Number is Valid");
-// }   else{
-//     alert("Enter Phone Number with correct format");
-//     }
-// }
-</script>    
+</script>
+   
 
 </head>
 <body>
@@ -130,13 +130,21 @@ error:function (){}
 
 <div class="form-group">
 <label>Mobile Number :</label>
-<input class="form-control" type="text" name="mobileno" maxlength="10" autocomplete="off" required />
+<input class="form-control" type="text" name="mobileno" maxlength="10" autocomplete="off" required/>
 </div>
                                         
 <div class="form-group">
 <label>Enter Email</label>
 <input class="form-control" type="email" name="email" id="emailid" onBlur="checkAvailability()"  autocomplete="off" required  />
    <span id="user-availability-status" style="font-size:12px;"></span> 
+</div>
+
+<div class="form-group">
+<label>Position :</label>
+<input type="radio" name="position" value="resident" required> Resident
+<input type="radio" name="position" value="intern" required> Intern
+<input type="radio" name="position" value="attache" required> Attache
+<input type="radio" name="position" value="member" required> Hon. Member
 </div>
 
 <div class="form-group">

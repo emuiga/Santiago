@@ -23,8 +23,6 @@ $query->execute();
 $_SESSION['msg']="Book Returned successfully";
 header('location:manage-issued-books.php');
 
-
-
 }
 ?>
 <!DOCTYPE html>
