@@ -35,6 +35,7 @@ else{?>
     <div class="content-wrapper">
          <div class="container">
         <div class="row pad-botm">
+                <a href="https://z-lib.is/" class="btn btn-danger pull-right" target="blank">BROWSE BOOKS</a>
             <div class="col-md-12">
                 <h4 class="header-line">ADMIN DASHBOARD</h4>
                 
@@ -99,11 +100,11 @@ $issuedbooks=$query1->rowCount();
 ?>
 
                             <h3><?php echo htmlentities($issuedbooks);?> </h3>
-                          Books Issued
+                            <a href="manage-issued-books.php">Books Issued</a>
                         </div>
                     </div>
              
-               <div class="col-md-3 col-sm-3 col-xs-6">
+                   <div class="col-md-3 col-sm-3 col-xs-6">
                       <div class="alert alert-warning back-widget-set text-center">
                             <i class="fa fa-recycle fa-5x"></i>
 <?php 

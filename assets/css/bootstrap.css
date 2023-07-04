@@ -4,6 +4,7 @@ html {
       -ms-text-size-adjust: 100%;
 }
 body {
+  background: #eee url(/assets/img/library-bg1.jpg) no-repeat center center fixed;
   margin: 0;
 }
 article,
