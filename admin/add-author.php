@@ -36,7 +36,7 @@ header('location:manage-authors.php');
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>N.C.A Library Management System | Add Author</title>
+    <title>N.C.A Library Management System | Add Publisher</title>
     <!-- BOOTSTRAP CORE STYLE  -->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONT AWESOME STYLE  -->
@@ -55,7 +55,7 @@ header('location:manage-authors.php');
          <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
-                <center><h4 class="header-line">Add Author</h4></center>
+                <center><h4 class="header-line">Add Publisher</h4></center>
                 
                             </div>
 
@@ -64,12 +64,12 @@ header('location:manage-authors.php');
 <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3"">
 <div class="panel panel-info">
 <div class="panel-heading">
-Author Info
+Publisher Info
 </div>
 <div class="panel-body">
 <form role="form" method="post">
 <div class="form-group">
-<label>Author Name</label>
+<label>Publisher Name</label>
 <input class="form-control" type="text" name="author" autocomplete="off"  required />
 </div>
 

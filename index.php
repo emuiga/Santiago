@@ -59,7 +59,11 @@ echo "<script>alert('Invalid Details');</script>";
     <link href="assets/css/style.css" rel="stylesheet" />
     <!-- GOOGLE FONT -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-
+    <style>
+body {
+  background-image: url('/admin/assets/img/library-bg1.jpg');
+}
+</style>
 </head>
 <body>
     <!------MENU SECTION START-->

@@ -29,7 +29,6 @@ else{
     <link href="assets/css/style.css" rel="stylesheet" />
     <!-- GOOGLE FONT -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-
 </head>
 <body>
       <!------MENU SECTION START-->
@@ -93,14 +92,17 @@ $result = mysqli_query($con, $sql);
                 ?>
             </select>
             <button type="submit" name="button">Generate Report</button>
-        </form>
-    </div>
-
-    <div>
-        <form action="./sendemail/eindex.php" method="post" target="blank">
+            <div class="pull-right">
+        <form action="./sendemail/eindex.php" method="post" target="blank" pull>
             <button type="submit" name="button">Send Email</button>
         </form>
+            </div>
+        </form>
+        
     </div>
+
+    
+        
 
 
         </div>
@@ -119,7 +121,7 @@ $result = mysqli_query($con, $sql);
                                             <th>#</th>
                                             <th>Patron Name</th>
                                             <th>Book Name</th>
-                                            <th>ISBN </th>
+                                            <th>Accession </th>
                                             <th>Issued Date</th>
                                             <th>Return Date</th>
                                             <th>Action</th>
@@ -127,6 +129,7 @@ $result = mysqli_query($con, $sql);
                                     </thead>
                                     <tbody>
 <?php $sql = "SELECT tblpatrons.FullName,tblbooks.BookName,tblbooks.ISBNNumber,tblissuedbookdetails.IssuesDate,tblissuedbookdetails.ReturnDate,tblissuedbookdetails.id as rid from  tblissuedbookdetails join tblpatrons on tblpatrons.PatronId=tblissuedbookdetails.PatronId join tblbooks on tblbooks.id=tblissuedbookdetails.BookId order by tblissuedbookdetails.id desc";
+
 $query = $dbh -> prepare($sql);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);

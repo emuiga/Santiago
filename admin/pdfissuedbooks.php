@@ -81,7 +81,7 @@ if (isset($_POST["generate_pdf"])) {
                 
                 <th width="20%">Patron Name</th>  
                 <th width="20%">Book Name</th>  
-                <th width="20%">ISBN</th> 
+                <th width="20%">Accession</th> 
                 <th width="15%">Issue Date</th>   
                 <th width="10%">Return Date</th>  
                 </tr>

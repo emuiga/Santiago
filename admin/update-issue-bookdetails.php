@@ -132,7 +132,7 @@ foreach($results as $result)
 
 
 <div class="form-group">
-<label>ISBN :</label>
+<label>Accession :</label>
 <?php echo htmlentities($result->ISBNNumber);?>
 </div>
 
@@ -156,7 +156,7 @@ foreach($results as $result)
 </div>
 
 <div class="form-group">
-<label>Fine (in USD) :</label>
+<label>Fine (in KSH) :</label>
 <?php 
 if($result->fine=="")
 {?>

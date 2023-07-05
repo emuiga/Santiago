@@ -83,8 +83,8 @@ while($row= mysqli_fetch_array($result))
                                <th width="5%">#</th>  
                                <th width="30%">Title</th>  
                                <th width="20%">Category</th> 
-                               <th width="25%">Author</th>  
-                               <th width="10%">ISBN</th>  
+                               <th width="25%">Publisher</th>  
+                               <th width="10%">Accession</th>  
                                <th width="10%">Price</th>  
                           </tr>  
                      <?php  

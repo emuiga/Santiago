@@ -67,7 +67,7 @@ header('location:manage-books.php');
                                         <tr>
                                             <th>#</th>
                                             <th>Book Name</th>
-                                            <th>ISBN </th>
+                                            <th>Accession </th>
                                             <th>Issued Date</th>
                                             <th>Return Date</th>
                                             <th>Fine in(KSH)</th>

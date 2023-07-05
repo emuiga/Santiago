@@ -2112,3 +2112,8 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
   })
 
 }(jQuery);
+
+$('.navbar .item').on("click", function() {
+  $('.navbar .item').removeClass('active');
+  $(this).addClass('active');
+});

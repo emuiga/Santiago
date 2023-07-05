@@ -104,9 +104,9 @@ foreach($results as $result)
 
 
 <div class="form-group">
-<label> Author</label>
+<label> Publisher</label>
 <select class="form-control" name="author">
-<option value=""> Select Author</option>
+<option value=""> Select Publisher</option>
 <?php 
 
 $sql = "SELECT * from  tblauthors ";
@@ -124,9 +124,9 @@ foreach($results as $result)
 </div>
 
 <div class="form-group">
-<label>ISBN Number<span style="color:red;">*</span></label>
+<label>Accession Number<span style="color:red;">*</span></label>
 <input class="form-control" type="text" name="isbn"  required="required" autocomplete="off"  />
-<p class="help-block">An ISBN is an International Standard Book Number.ISBN Must be unique</p>
+<p class="help-block">An Accession is a Local Standard Book Number.Accession must be unique.</p>
 </div>
 
  <div class="form-group">

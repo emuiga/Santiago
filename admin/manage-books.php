@@ -133,13 +133,16 @@ $result = mysqli_query($con, $sql);
                                             <th>Book Name</th>
                                             <th>Category</th>
                                             <th>Author</th>
-                                            <th>ISBN</th>
+                                            <th>Accession</th>
                                             <th>Price</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-<?php $sql =  "SELECT tblbooks.BookName,tblcategory.CategoryName,tblauthors.AuthorName,tblbooks.ISBNNumber,tblbooks.BookPrice,tblbooks.id as bookid from  tblbooks join tblcategory on tblcategory.id=tblbooks.CatId join tblauthors on tblauthors.id=tblbooks.AuthorId";
+
+                                   
+
+<?php $sql =  "SELECT tblbooks.BookName, tblcategory.CategoryName, tblbooks.AuthorName, tblbooks.ISBNNumber, tblbooks.BookPrice, tblbooks.id as bookid FROM tblbooks JOIN tblauthors LEFT JOIN tblcategory on tblcategory.id=tblbooks.CatId LEFT JOIN tblauthor_tblbook on tblbooks.id=tblauthor_tblbook.book_id and tblauthors.id=tblauthor_tblbook.author_id";
 
 $query = $dbh -> prepare($sql);
 $query->execute();

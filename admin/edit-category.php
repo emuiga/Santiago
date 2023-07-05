@@ -47,7 +47,6 @@ header('location:manage-categories.php');
       <!------MENU SECTION START-->
 <?php include('includes/header.php');?>
 <!-- MENU SECTION END-->
-    <div class="content-wra
     <div class="content-wrapper">
          <div class="container">
         <div class="row pad-botm">
@@ -105,7 +104,7 @@ foreach($results as $result)
 <label>
 <input type="radio" name="status" id="status" value="1">Active
 </label>
-</div
+</div>
 <?php } ?>
 </div>
 <?php }} ?>
