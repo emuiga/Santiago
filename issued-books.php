@@ -39,7 +39,11 @@ header('location:manage-books.php');
     <link href="assets/css/style.css" rel="stylesheet" />
     <!-- GOOGLE FONT -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-
+    <style>
+        h3 {
+  text-align: center;
+}
+    </style>
 </head>
 <body>
       <!------MENU SECTION START-->
@@ -49,7 +53,7 @@ header('location:manage-books.php');
          <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
-                <h4 class="header-line">Manage Issued Books</h4>
+                <h3 class="header-line" style="color:darkgreen;">Manage Issued Books</h3>
     </div>
     
 

@@ -1,5 +1,5 @@
 ﻿body {
-    background: #eee url(/assets/img/library-bg1.jpg) no-repeat center center fixed;
+    background: #eee url(..\img\library-bg1.jpg) no-repeat center center fixed;
     font-family: 'Open Sans', sans-serif;
     line-height:28px;
    
@@ -10,6 +10,7 @@
     -webkit-border-radius:0px;
 }
 .content-wrapper {
+    background: url(../img/pexels-romka-2034373.jpg) no-repeat center center;
     margin-top: 40px;
     min-height:800px;
     padding-bottom:90px;

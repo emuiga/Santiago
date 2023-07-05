@@ -63,6 +63,11 @@ echo "<script>alert('Invalid Details');</script>";
 body {
   background-image: url('/admin/assets/img/library-bg1.jpg');
 }
+h3 {
+  text-align: center;
+}
+
+    </style>
 </style>
 </head>
 <body>
@@ -73,7 +78,7 @@ body {
 <div class="container">
 <div class="row pad-botm">
 <div class="col-md-12">
-<h4 class="header-line">USER LOGIN FORM</h4>
+<h3 class="header-line" style="color:cadetblue">USER LOGIN FORM</h3>
 </div>
 </div>
              

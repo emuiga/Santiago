@@ -23,7 +23,11 @@ else{?>
     <link href="assets/css/style.css" rel="stylesheet" />
     <!-- GOOGLE FONT -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-
+    <style>
+      h3 {
+  text-align: center;
+}
+    </style>
 </head>
 <body>
       <!------MENU SECTION START-->
@@ -33,7 +37,7 @@ else{?>
          <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
-                <h4 class="header-line">ADMIN DASHBOARD</h4>
+                <h3 class="header-line" style="color:darkgreen;">MY DASHBOARD</h3>
                 
                             </div>
 
@@ -61,6 +65,12 @@ $issuedbooks=$query1->rowCount();
                             Book Issued
                         </div>
                     </div>
+                    <!-- <div class="col-md-3 col-sm-3 col-xs-6">
+
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-6">
+
+                    </div> -->
              
                <div class="col-md-3 col-sm-3 col-xs-6">
                       <div class="alert alert-warning back-widget-set text-center">

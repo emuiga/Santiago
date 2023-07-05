@@ -44,7 +44,11 @@ echo '<script>alert("Your profile has been updated")</script>';
     <link href="assets/css/style.css" rel="stylesheet" />
     <!-- GOOGLE FONT -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' /> 
-
+    <style>
+        h3 {
+  text-align: center;
+}
+    </style>    
 </head>
 <body>
     <!------MENU SECTION START-->
@@ -54,7 +58,7 @@ echo '<script>alert("Your profile has been updated")</script>';
          <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
-                <h4 class="header-line">My Profile</h4>
+                <h3 class="header-line" style="color:darksalmon ;">My Profile</h3>
                 
                             </div>
 

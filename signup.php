@@ -65,11 +65,11 @@ echo "<script>alert('Something went wrong. Please try again');</script>";
     <link href="assets/css/style.css" rel="stylesheet" />
     <!-- GOOGLE FONT -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-<style>
-    .error{
-        color:red;
-    }
-</style>
+    <style>
+      h3 {
+  text-align: center;
+}
+    </style>
 <script type="text/javascript">
 function valid()
 {
@@ -108,7 +108,7 @@ error:function (){}
          <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
-                <h4 class="header-line">Patron Signup</h4>
+                <h3 class="header-line" style="color:darksalmon;">Patron Signup</h3>
                 
                             </div>
 

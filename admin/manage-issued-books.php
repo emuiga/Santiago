@@ -84,13 +84,6 @@ $result = mysqli_query($con, $sql);
 ?>
     <div>
         <form action="pdfissuedbooks.php" method="post" target="blank">
-            <!-- <select name="patronid" id=""> -->
-                <?php
-                while($rows = mysqli_fetch_array($result)){
-                    // echo '<option value="'.$rows['tblpatrons'].'">'.$rows["FullName"].'</option>';
-                }
-                ?>
-            </select>
             <button type="submit" name="button">Generate Report</button>
             <div class="pull-right">
         <form action="./sendemail/eindex.php" method="post" target="blank" pull>
@@ -118,7 +111,7 @@ $result = mysqli_query($con, $sql);
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>#</th>
+                                            <th>Index</th>
                                             <th>Patron Name</th>
                                             <th>Book Name</th>
                                             <th>Accession </th>

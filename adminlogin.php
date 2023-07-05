@@ -45,6 +45,14 @@ echo "<script>alert('Invalid Details');</script>";
     <link href="assets/css/font-awesome.css" rel="stylesheet" />
     <!-- CUSTOM STYLE  -->
     <link href="assets/css/style.css" rel="stylesheet" />
+    <style>
+        body{
+        background-image: #eee url(../img/library-bg1.jpg) no-repeat center center fixed;
+        }
+        h3 {
+            text-align: center;
+        }
+    </style>
     <!-- GOOGLE FONT -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 
@@ -57,7 +65,7 @@ echo "<script>alert('Invalid Details');</script>";
 <div class="container">
 <div class="row pad-botm">
 <div class="col-md-12">
-<h4 class="header-line">ADMIN LOGIN FORM</h4>
+<h3 class="header-line" style="color:cadetblue">ADMIN LOGIN FORM</h3>
 </div>
 </div>
              

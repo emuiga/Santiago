@@ -99,7 +99,7 @@ $result = mysqli_query($con, $sql);
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>#</th>
+                                            <th>Index</th>
                                             <th>Patron ID</th>
                                             <th>Patron Name</th>
                                             <th>Email Id </th>

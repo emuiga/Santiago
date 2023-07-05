@@ -66,6 +66,10 @@ $error="Your current password is wrong";
     -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
     box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
 }
+h3 {
+  text-align: center;
+}
+
     </style>
 </head>
 <script type="text/javascript">
@@ -89,7 +93,7 @@ return true;
 <div class="container">
 <div class="row pad-botm">
 <div class="col-md-12">
-<h4 class="header-line">User Change Password</h4>
+<h3 class="header-line" style="color:cadetblue">Change Password</h3>
 </div>
 </div>
  <?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 

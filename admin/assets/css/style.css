@@ -4,7 +4,7 @@
  ============================================================ */
 
 body {
-    background: #eee url(/assets/img/library-bg1.jpg) no-repeat center center fixed;
+    background: #eee url(..\img\library-bg1.jpg) no-repeat center center fixed;
     font-family: 'Open Sans', sans-serif;
     line-height:28px;
    

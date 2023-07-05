@@ -4,13 +4,12 @@ function fetch_data()
 {
     $output = '';
 $con = mysqli_connect("localhost","root","","library");
-$sql = "SELECT tblbooks.BookName,tblcategory.CategoryName,tblauthors.AuthorName,tblbooks.ISBNNumber,tblbooks.BookPrice,tblbooks.id as bookid from  tblbooks join tblcategory on tblcategory.id=tblbooks.CatId join tblauthors on tblauthors.id=tblbooks.AuthorId";
+$sql = "SELECT tblbooks.BookName, tblcategory.CategoryName, tblbooks.AuthorName, tblbooks.ISBNNumber, tblbooks.BookPrice, tblbooks.id as bookid FROM tblbooks JOIN tblauthors LEFT JOIN tblcategory on tblcategory.id=tblbooks.CatId LEFT JOIN tblauthor_tblbook on tblbooks.id=tblauthor_tblbook.book_id and tblauthors.id=tblauthor_tblbook.author_id";
 $result = mysqli_query($con, $sql);
 while($row= mysqli_fetch_array($result))
 
      {  
       $output .= '<tr>   
-                          <td>'.$row["id"].'</td>  
                           <td>'.$row["BookName"].'</td>  
                           <td>'.$row["CategoryName"].'</td> 
                           <td>'.$row["AuthorName"].'</td> 
@@ -25,6 +24,9 @@ while($row= mysqli_fetch_array($result))
  {  
       require_once('tcpdf/tcpdf.php');  
       $obj_pdf = new TCPDF('P', PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);  
+      $obj_pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
+      $obj_pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
+      $obj_pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
       $obj_pdf->SetCreator(PDF_CREATOR);  
       $obj_pdf->SetTitle("NYANDARUA COUNTY ASSEMBLY");  
       $obj_pdf->SetHeaderData('', '', PDF_HEADER_TITLE, PDF_HEADER_STRING);  
@@ -44,7 +46,6 @@ while($row= mysqli_fetch_array($result))
       <h4 align="center">N.C.A LIBRARY BOOKS</h4><br /> 
       <table border="1" cellspacing="0" cellpadding="3">  
            <tr>  
-           <th width="5%">#</th>  
            <th width="30%">Title</th>  
            <th width="20%">Category</th> 
            <th width="25%">Author</th>  
@@ -80,10 +81,9 @@ while($row= mysqli_fetch_array($result))
                      <br/>
                      <table class="table table-bordered">  
                           <tr>  
-                               <th width="5%">#</th>  
                                <th width="30%">Title</th>  
                                <th width="20%">Category</th> 
-                               <th width="25%">Publisher</th>  
+                               <th width="25%">Author</th>  
                                <th width="10%">Accession</th>  
                                <th width="10%">Price</th>  
                           </tr>  
