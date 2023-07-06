@@ -104,7 +104,7 @@ header('location:manage-authors.php');
                     <!-- Advanced Tables -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                           Authors Listing
+                           Publishers Listing
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">

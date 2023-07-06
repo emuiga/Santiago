@@ -21,7 +21,7 @@ echo htmlentities($result->BookName);
 }
  else{?>
   
-<option class="others"> Invalid ISBN Number</option>
+<option class="others" style='color:red'> Invalid ISBN Number</option>
 <?php
  echo "<script>$('#submit').prop('disabled',true);</script>";
 }

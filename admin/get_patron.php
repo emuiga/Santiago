@@ -27,9 +27,10 @@ echo htmlentities($result->FullName);
 }
 }
 }
- else{
-  
-  echo "<span style='color:red'> Invalid Patron Id. Please Enter Valid Id.</span>";
+ else{?>
+
+  <option class="others" style='color:red'> Invalid Patron Id. Please Enter Valid Id.</option>
+ <?php 
  echo "<script>$('#submit').prop('disabled',true);</script>";
 }
 }
