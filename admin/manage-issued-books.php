@@ -86,12 +86,11 @@ $result = mysqli_query($con, $sql);
         <form action="pdfissuedbooks.php" method="post" target="blank">
             <button type="submit" name="button">Generate Report</button>
             <div class="pull-right">
+            </form>
         <form action="./sendemail/eindex.php" method="post" target="blank" pull>
             <button type="submit" name="button">Send Email</button>
         </form>
             </div>
-        </form>
-        
     </div>
 
     
@@ -107,17 +106,17 @@ $result = mysqli_query($con, $sql);
                           Issued Books 
                         </div>
                         <div class="panel-body">
-                            <div class="table-responsive">
+                            <div class="table-responsive" id="scrollTableContainer">
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>Index</th>
-                                            <th>Patron Name</th>
-                                            <th>Book Name</th>
-                                            <th>Accession </th>
+                                            <th width="25px">Index</th>
+                                            <th width="200px">Patron Name</th>
+                                            <th width="300px">Book Name</th>
+                                            <th width="50px">Accession </th>
                                             <th>Issued Date</th>
                                             <th>Return Date</th>
-                                            <th>Action</th>
+                                            <th width="100px">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -139,7 +138,7 @@ foreach($results as $result)
                                             <td class="center"><?php echo htmlentities($result->IssuesDate);?></td>
                                             <td class="center"><?php if($result->ReturnDate=="")
                                             {
-                                                echo htmlentities("Not Return Yet");
+                                                echo htmlentities("On Loan");
                                             } else {
 
 

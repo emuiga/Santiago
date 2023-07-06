@@ -37,7 +37,8 @@ if (isset($_POST["generate_pdf"])) {
     $obj_pdf->SetAutoPageBreak(TRUE, 10);
     $obj_pdf->SetFont('helvetica', '', 11);
     $obj_pdf->AddPage();
-    $content = '';
+    $content = '<h1 style="text-decoration:none;background-color:#2B7A0B;color:black;" align="center"> NYANDARUA COUNTY ASSEMBLY</h1>'
+;
     $content .= '  
       <h4 align="center">N.C.A LIBRARY BOOK ISSUE</h4><br /> 
       <table border="1" cellspacing="0" cellpadding="3">  

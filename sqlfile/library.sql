@@ -42,7 +42,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `FullName`, `AdminEmail`, `UserName`, `Password`, `updationDate`) VALUES
-(2, 'Clive Dela Cruz', 'clive@yahoo.com', 'admin', 'f925916e2754e5e03f75dd58a5733251', '2019-04-11 13:56:38');
+(2, 'Steve', 'steve@yahoo.com', 'admin', 'f925916e2754e5e03f75dd58a5733251', '2023-05-6 13:56:38');
 
 -- --------------------------------------------------------
 

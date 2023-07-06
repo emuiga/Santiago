@@ -27,11 +27,100 @@ if (strlen($_SESSION['alogin']) == 0) {
 
 </head>
 <style>
-body {
-  background-image: url('/admin/assets/img/library-bg1.jpg');
+    .custom-field {
+  font-size: 14px;
+  position: relative;
+  border-top: 20px solid transparent;
+  --field-padding: 12px;
+}
+.custom-field::after {
+  content: attr(aria-label);
+}
+.custom-field input {
+  border: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #f2f2f2;
+  padding: 12px;
+  border-radius: 3px;
+  width: 250px;
+  font-size: 14px;
+  padding: var(--field-padding);
+}
+.custom-field .placeholder {
+  position: absolute;
+  left: 12px;
+  bottom: 50%;
+  top: 22px;  
+  transform: translateY(-50%);
+  width: calc(100% - 24px);  
+  color: #aaa;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  left: var(--field-padding);
+  width: calc(100% - (var(--field-padding) * 2));
+  transition: 
+    top 0.3s ease,
+    color 0.3s ease,
+    font-size 0.3s ease;
+}
+.custom-field input:not(:placeholder-shown) + .placeholder
+.custom-field input:focus + .placeholder {
+  top: -10px;
+  font-size: 10px;
+  color: #222;
+}
+textarea {
+  width: 100%;
+  height: 250px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
+}
+h3 {
+  font-size: 50px;
+  font-weight: 600;
+  background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(24,121,9,1) 35%, rgba(0,212,255,1) 100%);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+h4 {
+  font-size: 30px;
+  font-weight: 400;
+  background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(24,121,9,1) 35%, rgba(0,212,255,1) 100%);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+button {
+    border-radius: 5px;
+    padding: 10px 32px;
+  text-align: center;
+}
+
+button a {
+    padding: 12px 12px;
+    border: 5px solid #ED2939;
+    border-radius: 5px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #ffffff; 
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;  
 }
 </style>
-<body>
+<body style="background-color:aquamarine;">
       <!------MENU SECTION START-->
 <?php include('includes/header.php');?>
 <!-- MENU SECTION END-->
@@ -39,9 +128,9 @@ body {
          <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
-                <center><h2>
+                <center><h3>
         N.C.A LIBRARY EMAIL
-    </h2></center>
+    </h3></center>
                 
                             </div>
  
@@ -63,27 +152,35 @@ body {
     <div>
         <div>
             <form action="send.php" method="post">
-                <strong>Check Address</strong>&nbsp&nbsp&nbsp<select name="checkmail" type="text" id="">
+            &nbsp&nbsp&nbsp&nbsp<strong>Check Address</strong>&nbsp&nbsp&nbsp<label class="custom-field" aria-label=""><select name="checkmail" type="text" id="" style="padding: 10px; background-color:chocolate; border:none; border-radius: 0.25em;">
                     <?php
                     while ($rows = mysqli_fetch_array($result)) {
                         echo '<option value="' . $rows['tblpatrons'] . '">' . $rows["EmailId"] . '</option>';
                     }
                     ?>
-                </select><br><br>
+                </select>
+                </label><br><br>
             </form>
 
         </div>
          <form action="send.php" method="post">
-        <strong>Email</strong>&nbsp&nbsp <input type="text" name="email" value="" size="35" placeholder="Enter patron email"> <br><br>
-        <strong>Subject</strong>&nbsp&nbsp <input type="text" name="subject" size="34" placeholder="Paste subject"><br><br>
-        <div><strong>Message</strong></div> <br>&nbsp&nbsp<textarea type="text" name="message" placeholder="Paste message" rows="10" cols="90"></textarea><br><br>
-        <button type="submit" name="send">Send</button>
+<label class="custom-field" aria-label="">
+&nbsp&nbsp&nbsp&nbsp<strong>Email</strong>&nbsp&nbsp <input type="email" name="email" required value="" size="35" placeholder="Enter patron email">
+        </label> <br><br>
+        <label class="custom-field" aria-label="">
+        &nbsp&nbsp&nbsp&nbsp<strong>Subject</strong>&nbsp&nbsp <input type="text" name="subject" size="34" placeholder="Paste subject">
+        </label><br><br>
+        <div>
+        <label class="custom-field" aria-label="">
+        &nbsp&nbsp&nbsp&nbsp<strong>Message</strong></div> &nbsp&nbsp<textarea type="text" name="message" placeholder="Paste message" rows="10" cols="90"></textarea>
+            </label><br><br>
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="submit" name="send">Send</button>
     </form>              
 
         <div class="contact-info">
             <h3>Select email template</h3>
             <p class="text" maxlength="100">
-            <h3>Reminder Notice: Overdue Book</h3>
+            <h4>Reminder Notice: Overdue Book</h4>
             <p>Dear [Patron's Name],</p>
             <p>We hope this email finds you well. This is a friendly reminder that you currently have an overdue book checked out from the NCA Library. The title of the book is [Book Title] and the due date for its return was 00/00/2023.</p>
             <p>As the book is now overdue, you have been accumulating late fines. Please be advised that if the book is not returned within the next three working days, we will have to charge you the full replacement cost of the book in addition to the current late fees.</p>
@@ -94,7 +191,7 @@ body {
                 </p>
             
             <p class="text">
-            <h3>Notice of Charges: Lost Book</h3>
+            <h4>Notice of Charges: Lost Book</h4>
             <p>Dear [Patron's Name],</p>
             <p>We are writing to inform you that you are being charged for losing a book from the NCA Library. The title of the book is [Book Title] and the replacement cost of the book is [Replacement Cost].</p>
             <p>As per our policy, you will incur the replacement cost of the book.</p>
@@ -130,7 +227,7 @@ body {
             <p class="success"></p>
         </form> -->
     <!-- </div>  -->
-    <?php include('includes/footer.php'); ?>
+    <?php include('./footer.php'); ?>
         <!-- FOOTER SECTION END-->
         <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
         <!-- CORE JQUERY  -->

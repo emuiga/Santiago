@@ -32,13 +32,11 @@ while($row= mysqli_fetch_array($result))
       $obj_pdf->SetFooterMargin(PDF_MARGIN_FOOTER);  
       $obj_pdf->SetMargins(PDF_MARGIN_LEFT, '10', PDF_MARGIN_RIGHT);  
       $obj_pdf->setPrintHeader(false);  
-      $obj_pdf->setPrintFooter(false);  
+      $obj_pdf->setPrintFooter(false); 
       $obj_pdf->SetAutoPageBreak(TRUE, 10);  
       $obj_pdf->SetFont('helvetica', '', 11);  
       $obj_pdf->AddPage();  
-      $content = '<h1 style="text-decoration:none;background-color:#2B7A0B;color:black;" align="center"> NYANDARUA COUNTY ASSEMBLY</h1>
-      <p><img src="\assets\img\NCA_logo.png" />
- </p>'
+      $content = '<h1 style="text-decoration:none;background-color:#2B7A0B;color:black;" align="center"> NYANDARUA COUNTY ASSEMBLY</h1>'
 ;
 
       $content .= '  

@@ -18,7 +18,7 @@ $ExpectedReturn = strtotime ( '30 day' , strtotime ( $date ) ) ;
 $ExpectedReturn = date ( 'Y-m-j' , $ExpectedReturn );
 $patronid=strtoupper($_POST['patronid']);
 $bookid=$_POST['bookdetails'];
-$sql="INSERT INTO  tblissuedbookdetails(PatronID,BookId,ReturnStatus,ExpectedReturn) VALUES(:patronid,:bookid,0,ExpectedReturn)";
+    $sql="INSERT INTO  tblissuedbookdetails(PatronID,BookId,ReturnStatus,ExpectedReturn) VALUES(:patronid,:bookid,0,ExpectedReturn)";
 $query = $dbh->prepare($sql);
 $query->bindParam(':patronid',$patronid,PDO::PARAM_STR);
 $query->bindParam(':bookid',$bookid,PDO::PARAM_STR);
@@ -32,7 +32,7 @@ header('location:manage-issued-books.php');
 else 
 {
 $_SESSION['error']="Something went wrong. Please try again";
-header('location:manage-issued-books.php');
+header('location:issue-book.php');
 }
 
 }
@@ -113,7 +113,6 @@ error:function (){}
 <?php include('includes/header.php');?>
 <!-- MENU SECTION END-->
     <div class="content-wrapper">
-    <div class="content-wrapper">
          <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
@@ -145,7 +144,7 @@ Issue a New Book
 
 
 <div class="form-group">
-<label>ISBN Number or Book Title<span style="color:red;">*</span></label>
+<label>Accession Number or Book Title<span style="color:red;">*</span></label>
 <input class="form-control" type="text" name="bookid" id="bookid" onBlur="getbook()"  required="required" />
 </div>
 

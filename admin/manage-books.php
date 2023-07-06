@@ -129,13 +129,13 @@ $result = mysqli_query($con, $sql);
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>Index</th>
-                                            <th>Book Name</th>
-                                            <th>Category</th>
-                                            <th>Author</th>
-                                            <th>Accession</th>
-                                            <th>Price</th>
-                                            <th>Action</th>
+                                            <th width="25px">Index</th>
+                                            <th width="300px">Book Name</th>
+                                            <th width="100px">Category</th>
+                                            <th width="100px">Author</th>
+                                            <th width="50px">Accession</th>
+                                            <th width="25px">Price</th>
+                                            <th width="100px">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>

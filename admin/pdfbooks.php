@@ -39,8 +39,9 @@ while($row= mysqli_fetch_array($result))
       $obj_pdf->setPrintFooter(false);  
       $obj_pdf->SetAutoPageBreak(TRUE, 10);  
       $obj_pdf->SetFont('helvetica', '', 11);  
-      $obj_pdf->AddPage();  
-      $content = '';  
+      $obj_pdf->AddPage(); 
+      $content = '<h1 style="text-decoration:none;background-color:#2B7A0B;color:black;" align="center"> NYANDARUA COUNTY ASSEMBLY</h1>'
+;  
       $content .=
     '  
       <h4 align="center">N.C.A LIBRARY BOOKS</h4><br /> 
