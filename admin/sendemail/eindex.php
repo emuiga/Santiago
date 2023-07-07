@@ -183,7 +183,6 @@ button a {
             <h4>Reminder Notice: Overdue Book</h4>
             <p>Dear [Patron's Name],</p>
             <p>We hope this email finds you well. This is a friendly reminder that you currently have an overdue book checked out from the NCA Library. The title of the book is [Book Title] and the due date for its return was 00/00/2023.</p>
-            <p>As the book is now overdue, you have been accumulating late fines. Please be advised that if the book is not returned within the next three working days, we will have to charge you the full replacement cost of the book in addition to the current late fees.</p>
             <p>We kindly ask that you return the book as soon as possible to avoid further charges. If you have any concerns or questions, please do not hesitate to contact us at <a href="https://nyandaruaassemblylibrary@gmail.com."  > nyandaruaassemblylibrary@gmail.com.</a></p>
             <p>Thank you for your cooperation and for being a valued member of the NCA Library community.<br></p>
             <p>Sincerely,</p>
@@ -195,8 +194,7 @@ button a {
             <p>Dear [Patron's Name],</p>
             <p>We are writing to inform you that you are being charged for losing a book from the NCA Library. The title of the book is [Book Title] and the replacement cost of the book is [Replacement Cost].</p>
             <p>As per our policy, you will incur the replacement cost of the book.</p>
-            <p>Please note that if the book is not returned within 30 days,</p>
-            <p>the book overdue fines will immediately start accumulating.</p>
+
             <p>We understand that accidents can happen, and we would appreciate it if you could return or replace the book as soon as possible. If you have any questions or concerns, please do not hesitate to contact us at <a href="https://nyandaruaassemblylibrary@gmail.com."  > nyandaruaassemblylibrary@gmail.com.</a></p> 
             <p>Thank you for your attention to this matter and for your continued support of the NCA Library.<br></p>
             <p>Sincerely,</p>

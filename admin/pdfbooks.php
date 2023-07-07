@@ -4,7 +4,7 @@ function fetch_data()
 {
     $output = '';
 $con = mysqli_connect("localhost","root","","library");
-$sql = "SELECT tblbooks.BookName, tblcategory.CategoryName, tblbooks.AuthorName, tblbooks.ISBNNumber, tblbooks.BookPrice, tblbooks.id as bookid FROM tblbooks JOIN tblauthors LEFT JOIN tblcategory on tblcategory.id=tblbooks.CatId LEFT JOIN tblauthor_tblbook on tblbooks.id=tblauthor_tblbook.book_id and tblauthors.id=tblauthor_tblbook.author_id";
+$sql = "SELECT tblbooks.BookName, tblcategory.CategoryName, tblbooks.AuthorName, tblbooks.ISBNNumber, tblbooks.BookPrice, tblbooks.id as bookid FROM tblbooks LEFT JOIN tblcategory on tblcategory.id=tblbooks.CatId LEFT JOIN tblauthor_tblbook on tblbooks.id=tblauthor_tblbook.book_id";;
 $result = mysqli_query($con, $sql);
 while($row= mysqli_fetch_array($result))
 

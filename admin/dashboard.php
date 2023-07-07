@@ -58,7 +58,7 @@ $listdbooks=$query->rowCount();
 
 
                             <h3><?php echo htmlentities($listdbooks);?></h3>
-                      Books Listed
+                            <a href="manage-books.php" style="color:darkgreen ;">Books Listed</a>
                         </div>
                     </div>
 
@@ -118,7 +118,7 @@ $returnedbooks=$query2->rowCount();
 ?>
 
                             <h3><?php echo htmlentities($returnedbooks);?></h3>
-                          Books Returned
+                            <a href="manage-issued-books.php" style="color:saddlebrown;">Books Returned</a>
                         </div>
                     </div>
                <div class="col-md-3 col-sm-3 col-xs-6">
@@ -132,7 +132,7 @@ $results3=$query3->fetchAll(PDO::FETCH_OBJ);
 $regptrs=$query3->rowCount();
 ?>
                             <h3><?php echo htmlentities($regptrs);?></h3>
-                           Registered Patrons
+                            <a href="reg-patrons.php" style="color:brown ;">Registered Patrons</a>
                         </div>
                     </div>
 
@@ -155,7 +155,7 @@ $listdathrs=$query4->rowCount();
 
 
                             <h3><?php echo htmlentities($listdathrs);?></h3>
-                      Authors Listed
+                            <a href="manage-authors.php" style="color:darkgreen ;">Publishers Listed</a>
                         </div>
                     </div>
 
@@ -172,7 +172,7 @@ $listdcats=$query5->rowCount();
 ?>
 
                             <h3><?php echo htmlentities($listdcats);?> </h3>
-                           Listed Categories
+                            <a href="manage-categories.php" style="color:cornflowerblue;">Listed Categories</a>
                         </div>
                     </div>
              

@@ -130,7 +130,7 @@ error:function (){}
 
 <div class="form-group">
 <label>Mobile Number :</label>
-<input class="form-control" type="text" name="mobileno" maxlength="10" autocomplete="off" required name="country_code" title="Error Message" pattern="[1-9]{1}[0-9]{9}"/>
+<input class="form-control" type="number" name="mobileno" maxlength="10" autocomplete="off" required name="country_code" title="Error Message" pattern="[1-9]{1}[0-9]{9}"/>
 </div>
                                         
 <div class="form-group">

@@ -146,7 +146,7 @@ foreach($results as $result)
 <label>Book Returned Date :</label>
 <?php if($result->ReturnDate=="")
                                             {
-                                                echo htmlentities("Not Return Yet");
+                                                echo htmlentities("On Loan");
                                             } else {
 
 

@@ -129,20 +129,20 @@ $result = mysqli_query($con, $sql);
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th width="25px">Index</th>
-                                            <th width="300px">Book Name</th>
-                                            <th width="100px">Category</th>
-                                            <th width="100px">Author</th>
-                                            <th width="50px">Accession</th>
-                                            <th width="25px">Price</th>
-                                            <th width="100px">Action</th>
+                                            <th >Index</th>
+                                            <th >Book Name</th>
+                                            <th >Category</th>
+                                            <th>Author</th>
+                                            <th >Accession</th>
+                                            <th >Price</th>
+                                            <th >Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
 
                                    
 
-<?php $sql =  "SELECT tblbooks.BookName, tblcategory.CategoryName, tblbooks.AuthorName, tblbooks.ISBNNumber, tblbooks.BookPrice, tblbooks.id as bookid FROM tblbooks JOIN tblauthors LEFT JOIN tblcategory on tblcategory.id=tblbooks.CatId LEFT JOIN tblauthor_tblbook on tblbooks.id=tblauthor_tblbook.book_id and tblauthors.id=tblauthor_tblbook.author_id";
+<?php $sql =  "SELECT tblbooks.BookName, tblcategory.CategoryName, tblbooks.AuthorName, tblbooks.ISBNNumber, tblbooks.BookPrice, tblbooks.id as bookid FROM tblbooks LEFT JOIN tblcategory on tblcategory.id=tblbooks.CatId LEFT JOIN tblauthor_tblbook on tblbooks.id=tblauthor_tblbook.book_id";
 
 $query = $dbh -> prepare($sql);
 $query->execute();
