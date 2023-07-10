@@ -69,7 +69,7 @@ header('location:manage-books.php');
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>#</th>
+                                            <th>Index</th>
                                             <th>Book Name</th>
                                             <th>Accession </th>
                                             <th>Issued Date</th>
@@ -98,7 +98,7 @@ foreach($results as $result)
                                             <td class="center"><?php if($result->ReturnDate=="")
                                             {?>
                                             <span style="color:red">
-                                             <?php   echo htmlentities("Not Return Yet"); ?>
+                                             <?php   echo htmlentities("Not Returned Yet"); ?>
                                                 </span>
                                             <?php } else {
                                             echo htmlentities($result->ReturnDate);
