@@ -69,18 +69,19 @@ header('location:manage-books.php');
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>Index</th>
-                                            <th>Book Name</th>
-                                            <th>Accession </th>
-                                            <th>Issue Date</th>
-                                            <th>Return Date</th>
-                                            <th>Fine in(KSH)</th>
+                                            <th width="30px">Index</th>
+                                            <th width="280px">Book Name</th>
+                                            <th width="100px">Accession </th>
+                                            <th width="100px">Issue Date</th>
+                                            <th width="120px">Expected Return</th>
+                                            <th width="100px">Return Date</th>
+                                            <th width="30px">Fine in(KSH)</th>
                                         </tr>
                                     </thead>
                                     <tbody>
 <?php 
 $pid=$_SESSION['ptrid'];
-$sql="SELECT tblbooks.BookName,tblbooks.ISBNNumber,tblissuedbookdetails.IssuesDate,tblissuedbookdetails.ReturnDate,tblissuedbookdetails.id as rid,tblissuedbookdetails.fine from  tblissuedbookdetails join tblpatrons on tblpatrons.PatronId=tblissuedbookdetails.PatronId join tblbooks on tblbooks.id=tblissuedbookdetails.BookId where tblpatrons.PatronId=:pid order by tblissuedbookdetails.id desc";
+$sql="SELECT tblbooks.BookName,tblbooks.ISBNNumber,tblissuedbookdetails.IssuesDate,tblissuedbookdetails.ExpectedReturn,tblissuedbookdetails.ReturnDate, tblissuedbookdetails.id as rid,tblissuedbookdetails.fine from  tblissuedbookdetails join tblpatrons on tblpatrons.PatronId=tblissuedbookdetails.PatronId join tblbooks on tblbooks.id=tblissuedbookdetails.BookId where tblpatrons.PatronId=:pid order by tblissuedbookdetails.id desc";
 $query = $dbh -> prepare($sql);
 $query-> bindParam(':pid', $pid, PDO::PARAM_STR);
 $query->execute();
@@ -95,6 +96,16 @@ foreach($results as $result)
                                             <td class="center"><?php echo htmlentities($result->BookName);?></td>
                                             <td class="center"><?php echo htmlentities($result->ISBNNumber);?></td>
                                             <td class="center"><?php echo htmlentities($result->IssuesDate);?></td>
+                                            <td class="center"><?php 
+                                            if($result->ReturnDate=="")
+                                            {?>
+                                            <span style="color:red">
+                                             <?php echo date('Y-m-d', strtotime($IssuesDate. ' + 30 days')); ?>
+                                             </span>
+                                            <?php } else {
+                                            echo date('Y-m-d', strtotime($IssuesDate. ' + 30 days'));
+                                        }
+                                            ?></td>
                                             <td class="center"><?php if($result->ReturnDate=="")
                                             {?>
                                             <span style="color:red">

@@ -49,7 +49,7 @@ header('location:manage-authors.php');
          <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
-                <h4 class="header-line">Manage Publishers</h4>
+                <h4 class="header-line" style="color:darkgreen ;">Manage Publishers</h4>
     </div>
      <div class="row">
     <?php if($_SESSION['error']!="")
@@ -111,7 +111,7 @@ header('location:manage-authors.php');
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>#</th>
+                                            <th>Index</th>
                                             <th>Publisher</th>
                                          
                                             <th>Creation Date</th>

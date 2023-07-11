@@ -114,14 +114,15 @@ $result = mysqli_query($con, $sql);
                                             <th width="200px">Patron Name</th>
                                             <th width="300px">Book Name</th>
                                             <th width="50px">Accession </th>
-                                            <th>Issue Date</th>
-                                            <th>Return Date</th>
+                                            <th width="100px">Issue Date</th>
+                                            <th width="100px">Return Date</th>
+                                            <th width="100px">Expected Return</th>
                                             <th>Status</th>
                                             <th width="100px">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-<?php $sql = "SELECT tblpatrons.FullName,tblbooks.BookName,tblbooks.ISBNNumber,tblissuedbookdetails.IssuesDate,tblissuedbookdetails.ReturnDate,tblissuedbookdetails.ReturnStatus,tblissuedbookdetails.id as rid from  tblissuedbookdetails join tblpatrons on tblpatrons.PatronId=tblissuedbookdetails.PatronId join tblbooks on tblbooks.id=tblissuedbookdetails.BookId order by tblissuedbookdetails.id desc";
+<?php $sql = "SELECT tblpatrons.FullName,tblbooks.BookName,tblbooks.ISBNNumber,tblissuedbookdetails.IssuesDate,tblissuedbookdetails.ReturnDate,tblissuedbookdetails.ReturnStatus, tblissuedbookdetails.ExpectedReturn, tblissuedbookdetails.id as rid from  tblissuedbookdetails join tblpatrons on tblpatrons.PatronId=tblissuedbookdetails.PatronId join tblbooks on tblbooks.id=tblissuedbookdetails.BookId order by tblissuedbookdetails.id desc";
 
 $query = $dbh -> prepare($sql);
 $query->execute();
@@ -138,6 +139,16 @@ foreach($results as $result)
                                             <td class="center"><?php echo htmlentities($result->ISBNNumber);?></td>
                                             <td class="center"><?php echo htmlentities($result->IssuesDate);?></td>
                                             <td class="center"><?php echo htmlentities($result->ReturnDate);?></td>
+                                            <td class="center"><?php 
+                                            if($result->ReturnDate=="")
+                                            {?>
+                                            <span style="color:red">
+                                             <?php echo date('Y-m-d', strtotime($IssuesDate. ' + 30 days')); ?>
+                                             </span>
+                                            <?php } else {
+                                            echo date('Y-m-d', strtotime($IssuesDate. ' + 30 days'));
+                                        }
+                                            ?></td>
                                             <td class="center"><?php if($result->ReturnStatus=="0")
                                             {
                                                 echo htmlentities("On Loan");
@@ -149,7 +160,7 @@ foreach($results as $result)
                                             ?></td>
                                             <td class="center">
 
-                                            <a href="update-issue-bookdetails.php?rid=<?php echo htmlentities($result->rid);?>"><button class="btn btn-primary"><i class="fa fa-edit "></i> Edit</button> 
+                                            <a href="update-issue-bookdetails.php?rid=<?php echo htmlentities($result->rid);?>"><button class="btn btn-primary"><i class="fa fa-edit "></i> Return</button> 
                                          
                                             </td>
                                         </tr>

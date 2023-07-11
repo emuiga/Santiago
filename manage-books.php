@@ -2,38 +2,21 @@
 session_start();
 error_reporting(0);
 include('includes/config.php');
-if(strlen($_SESSION['alogin'])==0)
+if(strlen($_SESSION['login'])==0)
     {   
 header('location:index.php');
 }
 else{ 
-
-// code for block patron    
-if(isset($_GET['inid']))
+if(isset($_GET['del']))
 {
-$id=$_GET['inid'];
-$status=0;
-$sql = "update tblpatrons set Status=:status  WHERE id=:id";
+$id=$_GET['del'];
+$sql = "delete from tblbooks  WHERE id=:id";
 $query = $dbh->prepare($sql);
 $query -> bindParam(':id',$id, PDO::PARAM_STR);
-$query -> bindParam(':status',$status, PDO::PARAM_STR);
 $query -> execute();
-header('location:reg-patrons.php');
-}
+$_SESSION['delmsg']="Category deleted successfully ";
+header('location:manage-books.php');
 
-
-
-//code for active patrons
-if(isset($_GET['id']))
-{
-$id=$_GET['id'];
-$status=1;
-$sql = "update tblpatrons set Status=:status  WHERE id=:id";
-$query = $dbh->prepare($sql);
-$query -> bindParam(':id',$id, PDO::PARAM_STR);
-$query -> bindParam(':status',$status, PDO::PARAM_STR);
-$query -> execute();
-header('location:reg-patrons.php');
 }
 
 
@@ -45,7 +28,7 @@ header('location:reg-patrons.php');
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>N.C.A Library Management System | Manage Reg Patrons</title>
+    <title>N.C.A Library Management System | Manage Books</title>
     <!-- BOOTSTRAP CORE STYLE  -->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONT AWESOME STYLE  -->
@@ -56,7 +39,11 @@ header('location:reg-patrons.php');
     <link href="assets/css/style.css" rel="stylesheet" />
     <!-- GOOGLE FONT -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-
+    <style>
+      h3 {
+  text-align: center;
+}
+    </style>
 </head>
 <body>
       <!------MENU SECTION START-->
@@ -66,25 +53,60 @@ header('location:reg-patrons.php');
          <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
-                <h4 class="header-line" style="color:darkgreen ;">Manage Reg Patrons</h4>
+                <h3 class="header-line" style="color:darkgreen;">View Books</h3>
+    </div>
+     <div class="row">
+    <?php if($_SESSION['error']!="")
+    {?>
+<div class="col-md-6">
+<div class="alert alert-danger" >
+ <strong>Error :</strong> 
+ <?php echo htmlentities($_SESSION['error']);?>
+<?php echo htmlentities($_SESSION['error']="");?>
 </div>
+</div>
+<?php } ?>
+<?php if($_SESSION['msg']!="")
+{?>
+<div class="col-md-6">
+<div class="alert alert-success" >
+ <strong>Success :</strong> 
+ <?php echo htmlentities($_SESSION['msg']);?>
+<?php echo htmlentities($_SESSION['msg']="");?>
+</div>
+</div>
+<?php } ?>
+<?php if($_SESSION['updatemsg']!="")
+{?>
+<div class="col-md-6">
+<div class="alert alert-success" >
+ <strong>Success :</strong> 
+ <?php echo htmlentities($_SESSION['updatemsg']);?>
+<?php echo htmlentities($_SESSION['updatemsg']="");?>
+</div>
+</div>
+<?php } ?>
+
+
+   <?php if($_SESSION['delmsg']!="")
+    {?>
+<div class="col-md-6">
+<div class="alert alert-success" >
+ <strong>Success :</strong> 
+ <?php echo htmlentities($_SESSION['delmsg']);?>
+<?php echo htmlentities($_SESSION['delmsg']="");?>
+</div>
+</div>
+<?php } ?>
+
+</div>
+
+
 <?php
 $con = mysqli_connect("localhost","root","","library");
-$sql = "SELECT distinct FullName from tblpatrons order by FullName";
+$sql = "SELECT distinct FullName from tblbooks order by FullName";
 $result = mysqli_query($con, $sql);
 ?>
-    <div>
-        <form action="pdfpatrons.php" method="post" target="blank">
-            <!-- <select name="patronid" id=""> -->
-                <?php
-                while($rows = mysqli_fetch_array($result)){
-                    // echo '<option value="'.$rows['tblpatrons'].'">'.$rows["FullName"].'</option>';
-                }
-                ?>
-            </select>
-            <button type="submit" name="button">Generate Report</button>
-        </form>
-    </div>
 
         </div>
             <div class="row">
@@ -92,25 +114,27 @@ $result = mysqli_query($con, $sql);
                     <!-- Advanced Tables -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                          Reg Patrons
+                           Book Records
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>Index</th>
-                                            <th>Patron ID</th>
-                                            <th>Patron Name</th>
-                                            <th>Email Id </th>
-                                            <th>Mobile Number</th>
-                                            <th>Reg Date</th>
-                                            <th>Status</th>
-                                            <th>Action</th>
+                                            <th width="25px" >Index</th>
+                                            <th width="300px">Book Name</th>
+                                            <th width="100px">Category</th>
+                                            <th width="200px">Author</th>
+                                            <th width="50px" >Accession</th>
+                                            <th width="100px">Price</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-<?php $sql = "SELECT * from tblpatrons";
+
+                                   
+
+<?php $sql =  "SELECT tblbooks.BookName, tblcategory.CategoryName, tblbooks.AuthorName,tblbooks.ISBNNumber, tblbooks.BookPrice, tblbooks.id as bookid FROM tblbooks LEFT JOIN tblcategory on tblcategory.id=tblbooks.CatId LEFT JOIN tblauthor_tblbook on tblbooks.id=tblauthor_tblbook.book_id";
+
 $query = $dbh -> prepare($sql);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
@@ -121,29 +145,12 @@ foreach($results as $result)
 {               ?>                                      
                                         <tr class="odd gradeX">
                                             <td class="center"><?php echo htmlentities($cnt);?></td>
-                                            <td class="center"><?php echo htmlentities($result->PatronId);?></td>
-                                            <td class="center"><?php echo htmlentities($result->FullName);?></td>
-                                            <td class="center"><?php echo htmlentities($result->EmailId);?></td>
-                                            <td class="center"><?php echo htmlentities($result->MobileNumber);?></td>
-                                             <td class="center"><?php echo htmlentities($result->RegDate);?></td>
-                                            <td class="center"><?php if($result->Status==1)
-                                            {
-                                                echo htmlentities("Active");
-                                            } else {
-
-
-                                            echo htmlentities("Blocked");
-}
-                                            ?></td>
-                                            <td class="center">
-<?php if($result->Status==1)
- {?>
-<a href="reg-patrons.php?inid=<?php echo htmlentities($result->id);?>" onclick="return confirm('Are you sure you want to block this Patron?');" >  <button class="btn btn-danger"> Deactivate</button>
-<?php } else {?>
-
-                                            <a href="reg-patrons.php?id=<?php echo htmlentities($result->id);?>" onclick="return confirm('Are you sure you want to active this patron?');"><button class="btn btn-primary"> Activate</button> 
-                                            <?php } ?>
-                                          
+                                            <td class="center"><?php echo htmlentities($result->BookName);?></td>
+                                            <td class="center"><?php echo htmlentities($result->CategoryName);?></td>
+                                            <td class="center"><?php echo htmlentities($result->AuthorName);?></td>
+                                            <td class="center"><?php echo htmlentities($result->ISBNNumber);?></td>
+                                            <td class="center"><?php echo htmlentities($result->BookPrice);?></td>
+                                            
                                             </td>
                                         </tr>
  <?php $cnt=$cnt+1;}} ?>                                      
@@ -161,8 +168,6 @@ foreach($results as $result)
             
     </div>
     </div>
-
-    
 
      <!-- CONTENT-WRAPPER SECTION END-->
   <?php include('includes/footer.php');?>

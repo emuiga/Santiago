@@ -49,7 +49,7 @@ header('location:manage-categories.php');
          <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
-                <h4 class="header-line">Manage Categories</h4>
+                <h4 class="header-line" style="color:darkgreen ;">Manage Categories</h4>
     </div>
      <div class="row">
     <?php if($_SESSION['error']!="")

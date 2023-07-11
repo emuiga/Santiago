@@ -68,7 +68,7 @@ if (isset($_POST["generate_pdf"])) {
 <body>
     <br />
     <div class="container">
-        <h4 align="center"> N.C.A LIBRARY BOOK ISSUE</h4><br />
+        <h4 align="center"> N.C.A LIBRARY BOOK ISSUE REPORT</h4><br />
         <div class="table-responsive">
             <div class="col-md-12" align="right">
                 <form method="post">
@@ -80,11 +80,11 @@ if (isset($_POST["generate_pdf"])) {
             <table class="table table-bordered">
                 <tr>
                 
-                <th width="20%">Patron Name</th>  
-                <th width="20%">Book Name</th>  
-                <th width="20%">Accession</th> 
+                <th width="18%">Patron Name</th>  
+                <th width="25%">Book Name</th>  
+                <th width="10%">Accession</th> 
                 <th width="15%">Issue Date</th>   
-                <th width="10%">Return Date</th>  
+                <th width="15%">Return Date</th>  
                 </tr>
                 <?php
                 echo fetch_data();

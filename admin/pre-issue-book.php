@@ -45,7 +45,7 @@ header('location:reg-patrons.php');
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>N.C.A Library Management System | Manage Reg Patrons</title>
+    <title>N.C.A Library Management System | Pre-Issue Book</title>
     <!-- BOOTSTRAP CORE STYLE  -->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONT AWESOME STYLE  -->
@@ -66,25 +66,13 @@ header('location:reg-patrons.php');
          <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
-                <h4 class="header-line" style="color:darkgreen ;">Manage Reg Patrons</h4>
+                <center><h3 class="header-line" style="color:darkgreen">Issue Book</h3></center>
 </div>
 <?php
 $con = mysqli_connect("localhost","root","","library");
 $sql = "SELECT distinct FullName from tblpatrons order by FullName";
 $result = mysqli_query($con, $sql);
 ?>
-    <div>
-        <form action="pdfpatrons.php" method="post" target="blank">
-            <!-- <select name="patronid" id=""> -->
-                <?php
-                while($rows = mysqli_fetch_array($result)){
-                    // echo '<option value="'.$rows['tblpatrons'].'">'.$rows["FullName"].'</option>';
-                }
-                ?>
-            </select>
-            <button type="submit" name="button">Generate Report</button>
-        </form>
-    </div>
 
         </div>
             <div class="row">
@@ -105,7 +93,6 @@ $result = mysqli_query($con, $sql);
                                             <th>Email Id </th>
                                             <th>Mobile Number</th>
                                             <th>Reg Date</th>
-                                            <th>Status</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -126,23 +113,11 @@ foreach($results as $result)
                                             <td class="center"><?php echo htmlentities($result->EmailId);?></td>
                                             <td class="center"><?php echo htmlentities($result->MobileNumber);?></td>
                                              <td class="center"><?php echo htmlentities($result->RegDate);?></td>
-                                            <td class="center"><?php if($result->Status==1)
-                                            {
-                                                echo htmlentities("Active");
-                                            } else {
-
-
-                                            echo htmlentities("Blocked");
-}
-                                            ?></td>
                                             <td class="center">
 <?php if($result->Status==1)
  {?>
-<a href="reg-patrons.php?inid=<?php echo htmlentities($result->id);?>" onclick="return confirm('Are you sure you want to block this Patron?');" >  <button class="btn btn-danger"> Deactivate</button>
-<?php } else {?>
-
-                                            <a href="reg-patrons.php?id=<?php echo htmlentities($result->id);?>" onclick="return confirm('Are you sure you want to active this patron?');"><button class="btn btn-primary"> Activate</button> 
-                                            <?php } ?>
+<a href="issue-book.php?inid=<?php echo htmlentities($result->id);?>" onclick="return confirm('Proceed to issue book?');" onClick="fill();">  <button class="btn btn-danger"> Issue</button>
+<?php } ?>
                                           
                                             </td>
                                         </tr>

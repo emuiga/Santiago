@@ -62,7 +62,7 @@ $issuedbooks=$query1->rowCount();
 ?>
 
                             <h3><?php echo htmlentities($issuedbooks);?> </h3>
-                            Book Issued
+                            Books Issued
                         </div>
                     </div>
                     <!-- <div class="col-md-3 col-sm-3 col-xs-6">

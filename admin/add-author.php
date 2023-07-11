@@ -55,7 +55,7 @@ header('location:manage-authors.php');
          <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
-                <center><h4 class="header-line">Add Publisher</h4></center>
+                <center><h4 class="header-line" style="color:darkgreen ;">Add Publisher</h4></center>
                 
                             </div>
 

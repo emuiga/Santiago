@@ -120,7 +120,7 @@ button a {
     display: inline-block;  
 }
 </style>
-<body style="background-color:aquamarine;">
+<body style="background-color:#00610E;">
       <!------MENU SECTION START-->
 <?php include('includes/header.php');?>
 <!-- MENU SECTION END-->

@@ -131,7 +131,7 @@ Issue a New Book
 <form role="form" method="post">
 
 <div class="form-group">
-<label>Patron id<span style="color:red;">*</span></label>
+<label>Patron Id<span style="color:red;">*</span></label>
 <input class="form-control" type="text" name="patronid" id="patronid" onBlur="getpatron()" autocomplete="on"  required />
 </div>
 
@@ -144,7 +144,7 @@ Issue a New Book
 
 
 <div class="form-group">
-<label>Accession Number or Book Title<span style="color:red;">*</span></label>
+<label>Accession Number<span style="color:red;">*</span></label>
 <input class="form-control" type="text" name="bookid" id="bookid" onBlur="getbook()"  required="required" />
 </div>
 
