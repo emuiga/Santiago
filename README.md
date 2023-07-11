@@ -70,7 +70,7 @@ Librarians have no way to be notified when a book is due.<br>
 ## FEATURES
 The product has two users:<br>
 - The library officer who will be acting as the administrator.<br>
-- The library patrons who borrow and use library facilities.<br>
+- The library patrons who borrow and use library facilities.
 The features that are available to the library officer once logged in are:<br>
 Can view details; figures for all books listed, all books outside the library, and books returned, 
 among other things from the dashboard.<br>
@@ -85,7 +85,7 @@ Add books and information about the books to the database.<br>
 Edit the information on the existing books.<br>
 Can check the report of the issued books.<br>
 Can generate pdf records of all lists in the system.<br>
-The features that are available to the library patron once logged in are:<br>
+- The features that are available to the library patron once logged in are:<br>
 Can view the details; figures of the books they’ve borrowed and books they’ve returned on 
 the dashboard.<br>
 Can view their profile and update it if they so wish.<br>
