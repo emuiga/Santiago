@@ -138,10 +138,10 @@ foreach($results as $result)
                                             <td class="center">
 <?php if($result->Status==1)
  {?>
-<a href="reg-patrons.php?inid=<?php echo htmlentities($result->id);?>" onclick="return confirm('Are you sure you want to block this Patron?');" >  <button class="btn btn-danger"> Inactive</button>
+<a href="reg-patrons.php?inid=<?php echo htmlentities($result->id);?>" onclick="return confirm('Are you sure you want to block this Patron?');" >  <button class="btn btn-danger"> Deactivate</button>
 <?php } else {?>
 
-                                            <a href="reg-patrons.php?id=<?php echo htmlentities($result->id);?>" onclick="return confirm('Are you sure you want to active this patron?');"><button class="btn btn-primary"> Active</button> 
+                                            <a href="reg-patrons.php?id=<?php echo htmlentities($result->id);?>" onclick="return confirm('Are you sure you want to active this patron?');"><button class="btn btn-primary"> Activate</button> 
                                             <?php } ?>
                                           
                                             </td>
