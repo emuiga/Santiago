@@ -1,9 +1,9 @@
 # Santiago
 
 # LIBRARY MANAGEMENT SYSTEM
-# ForNyandarua County Assembly
+### For Nyandarua County Assembly
 
-# PURPOSE
+## PURPOSE
 Manually updating the library system into a PHP web-based application to allow the library 
 officers convenient access to the details of the books, including circulation and numbers as 
 well as all registered patrons from a computer.
