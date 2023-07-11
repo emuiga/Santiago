@@ -19,18 +19,18 @@ The proposed LMS will provide an updated report of all registered books, issued 
 patrons at any point in time.
 The Manage Book and Issue Book forms will keep track of the available books and the 
 books that are in possession of patrons.
-# SOFTWARE REQUIREMENTS
+## SOFTWARE REQUIREMENTS
 UI & Functionality : PHP, HTML, CSS, Bootstrap
 Database : MySQL
 IDE : Visual Studio Code
 Server : Apache
-# HARDWARE REQUIREMENTS
+## HARDWARE REQUIREMENTS
 Computer
 RAM: 512 MB (minimum), 1 GB (recommended)
 Disk space: 200 MB 
 Processor: At least 1.0 GHz
 Browsers: Internet Explorer 9 and above, Microsoft Edge, Firefox, Chrome
-# FUNCTIONAL REQUIREMENTS
+## FUNCTIONAL REQUIREMENTS
 • Register
 Sign Up
 The library officers will be required to register themselves on the system. This will help in 
@@ -54,20 +54,20 @@ Renew Borrowing Period
 Return Book
 Secure Database
 Notifications
-# NON-FUNCTIONAL REQUIREMENTS
-Usability requirement
-Availability requirement
-Efficiency requirement
-Accuracy requirement
-Performance requirement
-Reliability requirement
-# PROBLEM STATEMENT
+## NON-FUNCTIONAL REQUIREMENTS
+Usability requirement<br>
+Availability requirement<br>
+Efficiency requirement<br>
+Accuracy requirement<br>
+Performance requirement<br>
+Reliability requirement<br>
+## PROBLEM STATEMENT
 Existing system does not provide for administrators to register so anybody can alter the 
 information.
 Having to physically check for resource availability is too much work.
 Patrons may forget the due date of a book therefore need a reminder.
 Librarians have no way to be notified when a book is due.
-# FEATURES
+## FEATURES
 The product has two users:
 - The library officer who will be acting as the administrator.
 - The library patrons who borrow and use library facilities.
@@ -91,7 +91,7 @@ the dashboard.
 Can view their profile and update it if they so wish.
 Can change their account password.
 Can view the books all the books they’ve been issued.
-# DATABASE
+## DATABASE
 Proposed Database is intended to store, retrieve, update, and manipulate information related 
 to assembly library which include:
 Book Availability
