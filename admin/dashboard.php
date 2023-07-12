@@ -35,7 +35,7 @@ else{?>
     <div class="content-wrapper">
          <div class="container">
         <div class="row pad-botm">
-                <a href="https://z-lib.is/" class="btn btn-danger pull-right" target="blank">BROWSE BOOKS</a>
+                <a href="https://drive.google.com/drive/folders/16UXx42261WcyAP_c5Ci34Luzshk-9-OC" class="btn btn-danger pull-right" target="blank">E-RESOURCES</a>
             <div class="col-md-12">
                 <h4 class="header-line" style="color:darkgreen ;">ADMIN DASHBOARD</h4>
                 

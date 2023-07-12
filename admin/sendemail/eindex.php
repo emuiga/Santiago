@@ -88,7 +88,7 @@ h3 {
   font-size: 50px;
   font-weight: 600;
   background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(24,121,9,1) 35%, rgba(0,212,255,1) 100%);
+background: chocolate;
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
@@ -97,7 +97,7 @@ h4 {
   font-size: 30px;
   font-weight: 400;
   background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(24,121,9,1) 35%, rgba(0,212,255,1) 100%);
+background: #ffffff;
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
@@ -183,7 +183,7 @@ button a {
             <h4>Reminder Notice: Overdue Book</h4>
             <p>Dear [Patron's Name],</p>
             <p>We hope this email finds you well. This is a friendly reminder that you currently have an overdue book checked out from the NCA Library. The title of the book is [Book Title] and the due date for its return was 00/00/2023.</p>
-            <p>We kindly ask that you return the book as soon as possible to avoid further charges. If you have any concerns or questions, please do not hesitate to contact us at <a href="https://nyandaruaassemblylibrary@gmail.com."  > nyandaruaassemblylibrary@gmail.com.</a></p>
+            <p>We kindly ask that you return the book as soon as possible to avoid further charges. If you have any concerns or questions, please do not hesitate to contact us at <a href="https://nyandaruaassemblylibrary@gmail.com."  style="color:chocolate"> nyandaruaassemblylibrary@gmail.com.</a></p>
             <p>Thank you for your cooperation and for being a valued member of the NCA Library community.<br></p>
             <p>Sincerely,</p>
             <p>Librarian</p>
@@ -195,7 +195,7 @@ button a {
             <p>We are writing to inform you that you are being charged for losing a book from the NCA Library. The title of the book is [Book Title] and the replacement cost of the book is [Replacement Cost].</p>
             <p>As per our policy, you will incur the replacement cost of the book.</p>
 
-            <p>We understand that accidents can happen, and we would appreciate it if you could return or replace the book as soon as possible. If you have any questions or concerns, please do not hesitate to contact us at <a href="https://nyandaruaassemblylibrary@gmail.com."  > nyandaruaassemblylibrary@gmail.com.</a></p> 
+            <p>We understand that accidents can happen, and we would appreciate it if you could return or replace the book as soon as possible. If you have any questions or concerns, please do not hesitate to contact us at <a href="https://nyandaruaassemblylibrary@gmail.com."  style="color:chocolate"> nyandaruaassemblylibrary@gmail.com.</a></p> 
             <p>Thank you for your attention to this matter and for your continued support of the NCA Library.<br></p>
             <p>Sincerely,</p>
             <p>Librarian</p>

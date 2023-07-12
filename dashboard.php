@@ -38,7 +38,8 @@ else{?>
         <div class="row pad-botm">
             <div class="col-md-12">
                 <h3 class="header-line" style="color:darkgreen;">MY DASHBOARD</h3>
-                
+                <a href="manage-books.php" class="btn btn-danger pull-left">View Books</a>
+                <a href="https://drive.google.com/drive/folders/16UXx42261WcyAP_c5Ci34Luzshk-9-OC" class="btn btn-danger pull-right" target="blank">E-RESOURCES</a>
                             </div>
 
         </div>
@@ -62,7 +63,7 @@ $issuedbooks=$query1->rowCount();
 ?>
 
                             <h3><?php echo htmlentities($issuedbooks);?> </h3>
-                            Books Issued
+                            <a href="issued-books.php" style="color:cornflowerblue;">Books Issued</a>
                         </div>
                     </div>
                     <!-- <div class="col-md-3 col-sm-3 col-xs-6">
@@ -87,7 +88,7 @@ $returnedbooks=$query2->rowCount();
 ?>
 
                             <h3><?php echo htmlentities($returnedbooks);?></h3>
-                          Books Returned 
+                          <a href="issued-books.php" style="color:brown ;">Books Returned</a> 
                         </div>
                     </div>
         </div>

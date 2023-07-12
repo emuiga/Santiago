@@ -39,9 +39,6 @@
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="ddlmenuItem">
                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="my-profile.php">My Profile</a></li>
                                      <li role="presentation"><a role="menuitem" tabindex="-1" href="change-password.php">Change Password</a></li>
-                                     <li role="presentation">
-    <a role="menuitem" tabindex="-1" href="manage-books.php">View Books</a>
-</li>
                                 </ul>
                             </li>
                             <li><a href="issued-books.php">Issued Books</a></li>
