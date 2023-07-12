@@ -38,7 +38,7 @@ else{?>
         <div class="row pad-botm">
             <div class="col-md-12">
                 <h3 class="header-line" style="color:darkgreen;">MY DASHBOARD</h3>
-                <a href="manage-books.php" class="btn btn-danger pull-left">View Books</a>
+                <a href="manage-books.php" class="btn btn-danger pull-left">VIEW BOOKS</a>
                 <a href="https://drive.google.com/drive/folders/16UXx42261WcyAP_c5Ci34Luzshk-9-OC" class="btn btn-danger pull-right" target="blank">E-RESOURCES</a>
                             </div>
 

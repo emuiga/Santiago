@@ -116,7 +116,7 @@ foreach($results as $result)
                                             <td class="center">
 <?php if($result->Status==1)
  {?>
-<a href="issue-book.php?inid=<?php echo htmlentities($result->id);?>" onclick="return confirm('Proceed to issue book?');" onClick="fill();">  <button class="btn btn-danger"> Issue</button>
+<a href="issue-book.php?inid=<?php echo htmlentities($result->id);?>" onclick="return confirm('Proceed to issue book?');" onClick="fill();">  <button class="btn btn-danger"> Issue Book</button>
 <?php } ?>
                                           
                                             </td>
