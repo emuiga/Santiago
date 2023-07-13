@@ -2,12 +2,11 @@
 session_start();
 error_reporting(0);
 include('includes/config.php');
-if (strlen($_SESSION['alogin']) == 0) {
-    header('location:index.php');
-} else {
-
-
-?>
+if(strlen($_SESSION['alogin'])==0)
+  { 
+header('location:index.php');
+}
+else{?>
     <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -122,7 +121,7 @@ button a {
 </style>
 <body style="background-color:#00610E;">
       <!------MENU SECTION START-->
-<?php include('includes/header.php');?>
+<?php include('./header.php'); ?>
 <!-- MENU SECTION END-->
     <div class="content-wrapper">
          <div class="container">
@@ -200,31 +199,7 @@ button a {
             <p>Sincerely,</p>
             <p>Librarian</p>
             </p>
-            <img src="fox.png" alt="">
         </div>
-
-    
-        <!-- <form action="send.php" method="post">
-             Email <input type="text" name="email" id="" placeholder="Enter patron email"> <br> -->
-             <!-- <div class="block">
-            <i class="fas fa-user"></i>
-                <input type="text" name="email" placeholder="Enter patron email">
-            </div>
-             <div class="block">
-                <i class="fas fa-envelope"></i>
-                <input type="text" name="subject" placeholder="Paste subject">
-            </div>
-             <div class="block">
-                <i class="fas fa-comment-alt"></i>
-                <input type="text" name="message" placeholder="Paste message">
-            </div>
-            <button type="submit">Send message <i class="fas fa-paper-plane"></i></button>
-
-            <p class="please-wait"></p>
-            <p class="error"></p>
-            <p class="success"></p>
-        </form> -->
-    <!-- </div>  -->
     <?php include('./footer.php'); ?>
         <!-- FOOTER SECTION END-->
         <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
