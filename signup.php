@@ -141,10 +141,11 @@ error:function (){}
 
 <div class="form-group">
 <label>Position :</label>
-<input type="radio" name="position" value="resident" required> Resident
+<input type="radio" name="position" value="member" required> Hon. Member
+<input type="radio" name="position" value="resident" required> Staff
+<input type="radio" name="position" value="member" required> Casual
 <input type="radio" name="position" value="intern" required> Intern
 <input type="radio" name="position" value="attache" required> Attache
-<input type="radio" name="position" value="member" required> Hon. Member
 </div>
 
 <div class="form-group">
