@@ -93,7 +93,7 @@ h3 {
 <form role="form" method="post">
 
 <div class="form-group">
-<label>Enter Email id</label>
+<label>Enter Email Id</label>
 <input class="form-control" type="text" name="emailid" required autocomplete="off" />
 </div>
 <div class="form-group">

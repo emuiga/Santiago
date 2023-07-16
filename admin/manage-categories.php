@@ -133,9 +133,9 @@ foreach($results as $result)
                                             <td class="center"><?php echo htmlentities($cnt);?></td>
                                             <td class="center"><?php echo htmlentities($result->CategoryName);?></td>
                                             <td class="center"><?php if($result->Status==1) {?>
-                                            <a href="#" class="btn btn-success btn-xs">Active</a>
+                                            <a href="#" class="btn btn-success btn-xs">Activate</a>
                                             <?php } else {?>
-                                            <a href="#" class="btn btn-danger btn-xs">Inactive</a>
+                                            <a href="#" class="btn btn-danger btn-xs">Deactivate</a>
                                             <?php } ?></td>
                                             <td class="center"><?php echo htmlentities($result->CreationDate);?></td>
                                             <td class="center"><?php echo htmlentities($result->UpdationDate);?></td>
