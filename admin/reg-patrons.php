@@ -82,7 +82,7 @@ $result = mysqli_query($con, $sql);
                 }
                 ?>
             </select>
-            <button type="submit" name="button">Generate Report</button>
+            <button type="submit" name="button" style="background-color: #4CAF50" class="btn btn-success">Generate Report</button>
         </form>
     </div>
 

@@ -26,7 +26,77 @@ else{?>
     <style>
       h3 {
   text-align: center;
+      }
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  background: #f1f1f1f1;
 }
+
+/* Slides */
+.mySlides {
+  display: none;
+  padding: 80px;
+  text-align: center;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -30px;
+  padding: 16px;
+  color: #888;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  position: absolute;
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+}
+
+/* The dot/bullet/indicator container */
+.dot-container {
+  text-align: center;
+  padding: 20px;
+  background: #ddd;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+/* Add a background color to the active dot/circle */
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Add an italic font style to all quotes */
+q {font-style: italic;}
+
+/* Add a blue color to the author */
+.author {color: cornflowerblue;}
     </style>
 </head>
 <body>
@@ -38,8 +108,8 @@ else{?>
         <div class="row pad-botm">
             <div class="col-md-12">
                 <h3 class="header-line" style="color:darkgreen;">MY DASHBOARD</h3>
-                <a href="manage-books.php" class="btn btn-danger pull-left">VIEW BOOKS</a>
-                <a href="https://drive.google.com/drive/folders/16UXx42261WcyAP_c5Ci34Luzshk-9-OC" class="btn btn-danger pull-right" target="blank">E-RESOURCES</a>
+                <a href="manage-books.php" class="btn btn-danger pull-left">VIEW BOOKS <i class="fa fa-book"></i></a>
+                <a href="https://drive.google.com/drive/folders/16UXx42261WcyAP_c5Ci34Luzshk-9-OC" class="btn btn-danger pull-right" target="blank">E-RESOURCES <i class="fa fa-book"></i></a>
                             </div>
 
         </div>
@@ -73,7 +143,7 @@ $issuedbooks=$query1->rowCount();
 
                     </div> -->
              
-               <div class="col-md-3 col-sm-3 col-xs-6">
+               <div class="col-md-3 col-sm-3 col-xs-6 pull-right">
                       <div class="alert alert-warning back-widget-set text-center">
                             <i class="fa fa-recycle fa-5x"></i>
 <?php 
@@ -92,11 +162,41 @@ $returnedbooks=$query2->rowCount();
                         </div>
                     </div>
         </div>
+        </div>
+        </div>
 
+<div>
+        <!-- Slideshow container -->
+<div class="slideshow-container">
 
-            
-    </div>
-    </div>
+<!-- Full-width slides/quotes -->
+<div class="mySlides">
+  <q>I love you the more in that I believe you had liked me for my own sake and for nothing else</q>
+  <p class="author">- John Keats</p>
+</div>
+
+<div class="mySlides">
+  <q>But man is not made for defeat. A man can be destroyed but not defeated.</q>
+  <p class="author">- Ernest Hemingway</p>
+</div>
+
+<div class="mySlides">
+  <q>I have not failed. I've just found 10,000 ways that won't work.</q>
+  <p class="author">- Thomas A. Edison</p>
+</div>
+
+<!-- Next/prev buttons -->
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+<!-- Dots/bullets/indicators -->
+<div class="dot-container">
+<span class="dot" onclick="currentSlide(1)"></span>
+<span class="dot" onclick="currentSlide(2)"></span>
+<span class="dot" onclick="currentSlide(3)"></span>
+</div>
+</div>
      <!-- CONTENT-WRAPPER SECTION END-->
 <?php include('includes/footer.php');?>
       <!-- FOOTER SECTION END-->

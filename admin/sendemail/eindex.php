@@ -23,8 +23,7 @@ else{?>
     <link href="assets/css/style.css" rel="stylesheet" />
     <!-- GOOGLE FONT -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-
-</head>
+    </head>
 <style>
     .custom-field {
   font-size: 14px;
@@ -85,7 +84,7 @@ textarea {
 }
 h3 {
   font-size: 50px;
-  font-weight: 600;
+  font-weight:normal;
   background: rgb(2,0,36);
 background: chocolate;
   color: transparent;
@@ -105,6 +104,7 @@ button {
     border-radius: 5px;
     padding: 10px 32px;
   text-align: center;
+  font-size: 18px;
 }
 
 button a {
@@ -119,9 +119,9 @@ button a {
     display: inline-block;  
 }
 </style>
-<body style="background-color:#00610E;">
+<body style="background-color:#2a6432;">
       <!------MENU SECTION START-->
-<?php include('./header.php'); ?>
+
 <!-- MENU SECTION END-->
     <div class="content-wrapper">
          <div class="container">

@@ -84,12 +84,9 @@ $result = mysqli_query($con, $sql);
 ?>
     <div>
         <form action="pdfissuedbooks.php" method="post" target="blank">
-            <button type="submit" name="button">Generate Report</button>
+            <button type="submit" name="button" style="background-color: #4CAF50" class="btn btn-success">Generate Report</button>
             <div class="pull-right">
             </form>
-        <form action="./sendemail/eindex.php" method="post" target="blank" pull>
-            <button type="submit" name="button">Send Email</button>
-        </form>
             </div>
     </div>
 
