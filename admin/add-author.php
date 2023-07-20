@@ -18,7 +18,7 @@ $query->execute();
 $lastInsertId = $dbh->lastInsertId();
 if($lastInsertId)
 {
-$_SESSION['msg']="Author Listed successfully";
+$_SESSION['msg']="Author listed successfully";
 header('location:manage-authors.php');
 }
 else 
