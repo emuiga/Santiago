@@ -98,5 +98,5 @@ Book Availability<br>
 Staff information<br><br>
 
 By MUIGA STEVE <br>
-STUDENT ATTACHE<br>
-ICT DEPARTMENT<br>
+Project done during my industrial attachment at Nyandarua County Assembly.<br>
+Approved.<br>
