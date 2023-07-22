@@ -100,3 +100,5 @@ Staff information<br><br>
 By MUIGA STEVE <br>
 Project done during my industrial attachment at Nyandarua County Assembly.<br>
 Approved.<br>
+
+The project is named Santiago since at the time of its creation I was immersed in Paulo Coelho's The Alchemist. 
