@@ -70,7 +70,7 @@ else{?>
   top: -10px;
   font-size: 10px;
   color: #222;
-}
+} 
 textarea {
   width: 100%;
   height: 250px;
@@ -84,7 +84,7 @@ textarea {
 }
 h3 {
   font-size: 50px;
-  font-weight:normal;
+  font-weight:50px;
   background: rgb(2,0,36);
 background: chocolate;
   color: transparent;

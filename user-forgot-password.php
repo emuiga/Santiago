@@ -62,7 +62,14 @@ return false;
 return true;
 }
 </script>
-
+<style>
+body {
+  background-image: url('/admin/assets/img/library-bg1.jpg');
+}
+h3 {
+  text-align: center;
+}
+</style>
 </head>
 <body>
     <!------MENU SECTION START-->
@@ -72,7 +79,7 @@ return true;
 <div class="container">
 <div class="row pad-botm">
 <div class="col-md-12">
-<h4 class="header-line">User Password Recovery</h4>
+<h3 class="header-line" style="color:cadetblue">User Password Recovery</h3>
 </div>
 </div>
              

@@ -66,7 +66,7 @@ header('location:reg-patrons.php');
          <div class="container">
         <div class="row pad-botm">
             <div class="col-md-12">
-                <center><h3 class="header-line" style="color:darkgreen">Issue Book</h3></center>
+                <center><h4 class="header-line" style="color:darkgreen">Issue Book</h4></center>
 </div>
 <?php
 $con = mysqli_connect("localhost","root","","library");
